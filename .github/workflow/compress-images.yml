@@ -34,6 +34,14 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Resize Images to Max 1000px Width
+        uses: TheGroundZero/image-shrinker@main
+        with:
+          subdir: ''              # 根目录，可改为 'images/' 等子目录
+          maxwidth: 1000          # 最大宽度 1000px
+        env:
+          DEBUG: false
+
       - name: Compress Images
         id: calibre
         uses: calibreapp/image-actions@main
